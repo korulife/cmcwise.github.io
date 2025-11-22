@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>CMC Wise – Wireframe Kit</title>
+  <style>
+    :root {
+      --bg-page: #ffffff;
+      --bg-section-alt: #f5f5f5;
+      --bg-dark: #222222;
+      --border-grey: #dcdcdc;
+      --text-dark: #1a1a1a;
+      --text-mid: #555555;
+      --text-light: #999999;
+      --placeholder-grey: #e6e6e6;
+      --max-width: 1280px;
+
+      --h1-size: 64px;
+      --h1-line: 1.05;
+      --h2-size: 36px;
+      --h2-line: 1.15;
+      --h3-size: 24px;
+      --h3-line: 1.25;
+      --body-size: 18px;
+      --body-line: 1.5;
+      --small-size: 14px;
+      --radius-lg: 24px;
+      --radius-md: 12px;
+      --radius-sm: 6px;
+      --pad-section-desktop: 80px;
+      --pad-section-mobile: 48px;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg-page);
+      color: var(--text-dark);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: var(--body-size);
+      line-height: var(--body-line);
+    }
+
+    h1 {
+      font-size: var(--h1-size);
+      line-height: var(--h1-line);
+      font-weight: 600;
+      margin: 0 0 24px;
+      color: var(--text-dark);
+    }
+
+    h2 {
+      font-size: var(--h2-size);
+      line-height: var(--h2-line);
+      font-weight: 600;
+      margin: 0 0 24px;
+      color: var(--text-dark);
+    }
+
+    h3 {
+      font-size: var(--h3-size);
+      line-height: var(--h3-line);
+      font-weight: 600;
+      margin: 0 0 16px;
+      color: var(--text-dark);
+    }
+
+    p {
+      margin: 0 0 16px;
+      color: var(--text-mid);
+      max-width: 800px;
+    }
+
+    .page {
+      border-top: 8px solid var(--bg-dark);
+      margin: 0 auto;
+      padding-bottom: 120px;
+    }
+
+    /* global layout helpers */
+    .wrap {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header.navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px;
+      border-bottom: 1px solid var(--border-grey);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .brand .logo-box {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      background: var(--placeholder-grey);
+      border: 1px solid var(--border-grey);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      color: var(--text-light);
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      font-size: 16px;
+      line-height: 1.4;
+      color: var(--text-mid);
+    }
+
+    nav .cta-button {
+      padding: 10px 16px;
+      border-radius: var(--radius-md);
+      background: var(--bg-dark);
+      color: #fff;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+    section.section {
+      padding: var(--pad-section-desktop) 0;
+      border-bottom: 1px solid var(--border-grey);
+    }
+
+    section.alt {
+      background: var(--bg-section-alt);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 32px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 24px;
+    }
+
+    .card {
+      border: 1px solid var(--border-grey);
+      border-radius: var(--radius-md);
+      background: #fff;
+      padding: 24px;
+    }
+
+    .placeholder-block {
+      width: 100%;
+      background: var(--placeholder-grey);
+      border: 1px dashed var(--text-light);
+      border-radius: var(--radius-md);
+      color: var(--text-light);
+      font-size: var(--small-size);
+      line-height: 1.4;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .timeline-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .timeline-step {
+      flex: 1 1 160px;
+      min-width: 160px;
+      border: 1px solid var(--border-grey);
+      border-radius: var(--radius-md);
+      background: #fff;
+      padding: 16px;
+      font-size: var(--small-size);
+      line-height: 1.4;
+      color: var(--text-mid);
+      position: relative;
+    }
+
+    .timeline-step:after {
+      content: "→";
+      position: absolute;
+      right: -16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-light);
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    .timeline-step:last-child:after {
+      content: "";
+    }
+
+    table.cap-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 16px;
+      line-height: 1.4;
+      color: var(--text-mid);
+      border: 1px solid var(--border-grey);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+
+    table.cap-table th {
+      background: #efefef;
+      text-align: left;
+      font-weight: 600;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-grey);
+      font-size: 14px;
+      color: var(--text-dark);
+    }
+
+    table.cap-table td {
+      background: #fff;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-grey);
+      font-size: 14px;
+    }
+
+    /* footer */
+    footer.site-footer {
+      background: var(--bg-dark);
+      color: #fff;
+      padding: 48px 24px 80px;
+      font-size: var(--small-size);
+      line-height: 1.6;
+    }
+
+    footer .footer-grid {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      gap: 32px;
+    }
+
+    footer h4 {
+      margin: 0 0 16px;
+      font-size: 16px;
+      line-height: 1.4;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    footer p,
+    footer a,
+    footer li {
+      color: #bbb;
+      margin: 0 0 8px;
+      text-decoration: none;
+      list-style: none;
+    }
+
+    footer ul {
+      padding: 0;
+      margin: 0;
+    }
+
+    footer .copyright {
+      grid-column: 1 / -1;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 24px;
+      font-size: 12px;
+      color: #777;
+    }
+
+    /* responsive */
+    @media (max-width: 1024px){
+      h1 { font-size: 48px; line-height: 1.1; }
+      h2 { font-size: 28px; line-height: 1.2; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .grid-3 { grid-template-columns: 1fr; }
+      .grid-4 { grid-template-columns: 1fr 1fr; }
+      nav ul { gap:16px; font-size:15px; }
+    }
+
+    @media (max-width: 640px){
+      h1 { font-size: 36px; line-height: 1.15; }
+      h2 { font-size: 24px; line-height: 1.25; }
+      h3 { font-size: 20px; line-height: 1.3; }
+      body { font-size:16px; line-height:1.5; }
+      header.navbar { flex-direction: column; gap:16px; align-items:flex-start; }
+      nav ul { flex-wrap: wrap; }
+      .grid-4 { grid-template-columns: 1fr; }
+      section.section { padding: var(--pad-section-mobile) 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- =========================================================
+GLOBAL NAV / HEADER (appears on all pages, Leukocare-style)
+========================================================= -->
+<header class="navbar">
+  <div class="brand">
+    <div class="logo-box">
+      LOGO
+    </div>
+    <div>CMC Wise</div>
+  </div>
+  <nav>
+    <ul>
+      <li>Home</li>
+      <li>R&amp;D</li>
+      <li>Regulatory</li>
+      <li>About</li>
+      <li>Insights</li>
+      <li>Contact</li>
+      <li><div class="cta-button">Let's Talk</div></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- =========================================================
+PAGE 1: HOME
+========================================================= -->
+<div class="page" id="home">
+  <!-- HERO -->
+  <section class="section">
+    <div class="wrap grid-2">
+      <div>
+        <h1>Where Formulation Science Meets Regulatory Precision.</h1>
+        <p>Short positioning statement goes here. Max ~2 lines. Explains that CMC Wise unites small-molecule formulation R&amp;D and multi-region regulatory strategy (EMA / MHRA / FDA) into one integrated platform.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;">
+          <div class="cta-button" style="background:#444;">Explore R&amp;D</div>
+          <div class="cta-button" style="background:#777;">Regulatory Affairs</div>
+        </div>
+      </div>
+      <div>
+        <div class="placeholder-block" style="height:240px;">
+          HERO VISUAL / MOLECULE ANIMATION / PARTICLE GRAPHIC
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE ARE -->
+  <section class="section alt">
+    <div class="wrap" style="text-align:center;">
+      <h2>Who We Are</h2>
+      <p style="margin-left:auto;margin-right:auto;">CMC Wise is a UK-based pharma R&amp;D and regulatory platform focused on small molecules. This block mirrors the “about us” tone. It should be concise and confident. Max ~120 words.</p>
+    </div>
+  </section>
+
+  <!-- TWO PILLARS -->
+  <section class="section">
+    <div class="wrap grid-2">
+      <div class="card">
+        <h3>R&amp;D</h3>
+        <p>Formulation innovation for sterile injectables, ophthalmics, oral solids, and oral liquids. Data-driven design. CMC-aligned output. Button leads to full R&amp;D page.</p>
+        <div class="cta-button" style="width:max-content;background:#444;">Explore R&amp;D →</div>
+      </div>
+      <div class="card">
+        <h3>Regulatory Affairs</h3>
+        <p>EMA / MHRA / FDA submissions, lifecycle management, labeling, 505(b)(2) planning. Button leads to Regulatory page.</p>
+        <div class="cta-button" style="width:max-content;background:#777;">Explore Regulatory →</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR DIFFERENCE -->
+  <section class="section alt">
+    <div class="wrap">
+      <h2>Our Difference</h2>
+      <div class="grid-4">
+        <div class="card">
+          <div class="placeholder-block" style="height:64px;">ICON</div>
+          <h3 style="font-size:20px;line-height:1.3;margin-top:16px;">Science-Driven</h3>
+          <p>We design around the molecule and the data, not around a generic template.</p>
+        </div>
+        <div class="card">
+          <div class="placeholder-block" style="height:64px;">ICON</div>
+          <h3 style="font-size:20px;line-height:1.3;margin-top:16px;">Integrated Workflow</h3>
+          <p>Formulation and regulatory speak to each other from day zero.</p>
+        </div>
+        <div class="card">
+          <div class="placeholder-block" style="height:64px;">ICON</div>
+          <h3 style="font-size:20px;line-height:1.3;margin-top:16px;">Senior-Led</h3>
+          <p>Access to decision-makers, not layers of account management.</p>
+        </div>
+        <div class="card">
+          <div class="placeholder-block" style="height:64px;">ICON</div>
+          <h3 style="font-size:20px;line-height:1.3;margin-top:16px;">Transparent Milestones</h3>
+          <p>Defined steps, documented data, audit-friendly output.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSIGHTS PREVIEW -->
+  <section class="section">
+    <div class="wrap">
+      <h2>Insights</h2>
+      <div class="grid-3">
+        <div class="card">
+          <div class="placeholder-block" style="height:140px;">ARTICLE THUMBNAIL</div>
+          <h3 style="font-size:20px;line-height:1.3;margin-top:16px;">Designing Stability Studies for 505(b)(2)</h3>
+          <p class="desc">Short abstract excerpt (2–3 lines).</p>
+          <div style="font-size:14px;color:#999;">Read →</div>
+        </div>
+        <div class="card">
+          <div class="placeholder-block" style="height:140px;">ARTICLE THUMBNAIL</div>
+          <h3 style="font-size:20px;line-height:1.3;margin-top:16px;">Bridging EMA &amp; MHRA Post-Brexit</h3>
+          <p class="desc">Short abstract excerpt (2–3 lines).</p>
+          <div style="font-size:14px;color:#999;">Read →</div>
+        </div>
+        <div class="card">
+          <div class="placeholder-block" style="height:140px;">ARTICLE THUMBNAIL</div>
+          <h3 style="font-size:20px;line-height:1.3;margin-top:16px;">Why Bioinformatics Belongs in Formulation</h3>
+          <p class="desc">Short abstract excerpt (2–3 lines).</p>
+          <div style="font-size:14px;color:#999;">Read →</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- =========================================================
+PAGE 2: R&D
+========================================================= -->
+<div class="page" id="rnd">
+  <!-- HERO -->
+  <section class="section">
+    <div class="wrap grid-2">
+      <div>
+        <h1>Formulation Science, Reimagined for Small Molecules.</h1>
+        <p>Hero copy: every molecule behaves differently. We build data-driven formulations tuned to your molecule and CMC timeline. Button scrolls to philosophy.</p>
+        <div class="cta-button" style="background:#444;width:max-content;">Our Philosophy ↓</div>
+      </div>
+      <div>
+        <div class="placeholder-block" style="height:240px;">
+          R&amp;D HERO VISUAL  
+          (vials / particle dispersion / long-acting depot)
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section class="section alt">
+    <div class="wrap grid-2">
+      <div>
+        <h2>Science that adapts to the molecule.</h2>
+        <p>We start with solubility, ionization, degradation, polymorph behavior. We model risks before we run them. We design before we test, predict before we scale.</p>
+      </div>
+      <div>
+        <div class="placeholder-block" style="height:200px;">
+          SIMPLE ANIMATION / GRAPHIC  
+          "MOLECULE → FORMULATION"
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTEGRATED EXPERTISE (TABS IN FINAL DESIGN) -->
+  <section class="section">
+    <div class="wrap">
+      <h2>Where chemistry meets data and manufacturing reality.</h2>
+      <div class="grid-4">
+        <div class="card">
+          <h3>Pharmaceutics</h3>
+          <p>Translate molecular properties into dosage form behavior.</p>
+        </div>
+        <div class="card">
+          <h3>Analytical Chemistry</h3>
+          <p>Define purity, potency, and stability with validated methods.</p>
+        </div>
+        <div class="card">
+          <h3>Bioinformatics / Biostats</h3>
+          <p>Predict excipient compatibility and release kinetics via DoE.</p>
+        </div>
+        <div class="card">
+          <h3>Regulatory Science</h3>
+          <p>Build Module 3-ready data packages in parallel with lab work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE COMPETENCIES -->
+  <section class="section alt">
+    <div class="wrap">
+      <h2>Formulating for Function.</h2>
+      <div class="grid-4">
+        <div class="card">
+          <div class="placeholder-block" style="height:120px;">STERILE INJECTABLE IMAGE</div>
+          <h3>Sterile Injectables</h3>
+          <p>Depot, RTU, nanosuspensions, emulsions. Focus on particle size, rheology, solvent balance.</p>
+        </div>
+        <div class="card">
+          <div class="placeholder-block" style="height:120px;">OPHTHALMIC IMAGE</div>
+          <h3>Ophthalmic</h3>
+          <p>Aqueous &amp; suspension systems. Viscosity, preservative balance, sterility built in early.</p>
+        </div>
+        <div class="card">
+          <div class="placeholder-block" style="height:120px;">TABLETS / PELLETS IMAGE</div>
+          <h3>Oral Solids</h3>
+          <p>IR / MR tablets, MUPS, pellets. Low-solubility actives, polymorph control, release matrices.</p>
+        </div>
+        <div class="card">
+          <div class="placeholder-block" style="height:120px;">LIQUID / SUSPENSION IMAGE</div>
+          <h3>Oral Liquids</h3>
+          <p>Palatable solutions &amp; suspensions. Taste masking, dose uniformity, patient usability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE WORK -->
+  <section class="section">
+    <div class="wrap">
+      <h2>Agile development. Transparent milestones.</h2>
+      <p>Fee-for-service (you own the data) and co-development (shared risk / shared upside). Both run on milestone-driven execution and audit-ready documentation.</p>
+      <div class="timeline-row" style="margin-top:32px;">
+        <div class="timeline-step">
+          <strong style="color:#000;">1. Pre-formulation</strong><br/>
+          Solubility, salt/polymorph screening, risk map.
+        </div>
+        <div class="timeline-step">
+          <strong style="color:#000;">2. Formulation Design</strong><br/>
+          DoE, excipient matrix, prototype build.
+        </div>
+        <div class="timeline-step">
+          <strong style="color:#000;">3. Analytics &amp; Stability</strong><br/>
+          Method validation, ICH stability, release profile.
+        </div>
+        <div class="timeline-step">
+          <strong style="color:#000;">4. Scale-Up &amp; Transfer</strong><br/>
+          Exhibit batch, tech transfer, CMC package.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH / CAPABILITIES TABLE -->
+  <section class="section alt">
+    <div class="wrap">
+      <h2>Tools that turn data into design.</h2>
+      <table class="cap-table">
+        <tr>
+          <th>Capability</th>
+          <th>Focus</th>
+        </tr>
+        <tr>
+          <td>Pre-Formulation</td>
+          <td>Solubility &amp; pKa profiling, polymorph screening, degradation kinetics</td>
+        </tr>
+        <tr>
+          <td>Formulation Design</td>
+          <td>QbD DoE, excipient compatibility, stability prediction</td>
+        </tr>
+        <tr>
+          <td>Analytical Sciences</td>
+          <td>HPLC/GC/LC-MS method development &amp; validation</td>
+        </tr>
+        <tr>
+          <td>Stability Programs</td>
+          <td>ICH-compliant accelerated / photostability studies</td>
+        </tr>
+        <tr>
+          <td>Scale-Up</td>
+          <td>Process optimization, aseptic fill simulation, exhibit batch</td>
+        </tr>
+        <tr>
+          <td>Documentation</td>
+          <td>CMC data packages, tech transfer reports, audit trail</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- WHY / CTA -->
+  <section class="section">
+    <div class="wrap grid-2">
+      <div>
+        <h2>We build formulations that endure — scientifically and regulatorily.</h2>
+        <p>“We don’t just develop formulations. We build the data packages that make them real.”</p>
+      </div>
+      <div class="card" style="align-self:start;">
+        <h3>Start a Discussion</h3>
+        <p>Short confidentiality reassurance. Invite them to share target molecule, dosage form, timeline pressure.</p>
+        <div class="cta-button" style="background:#444;width:max-content;">Contact Us →</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- =========================================================
+PAGE 3: REGULATORY
+========================================================= -->
+<div class="page" id="regulatory">
+  <!-- HERO -->
+  <section class="section">
+    <div class="wrap grid-2">
+      <div>
+        <h1>Global Strategy. Local Compliance. Submission-Ready Execution.</h1>
+        <p>We align science, CMC data, and submission logic across EMA, MHRA, and FDA. Hero block leads into “Our Approach.”</p>
+        <div class="cta-button" style="background:#777;width:max-content;">Our Approach ↓</div>
+      </div>
+      <div>
+        <div class="placeholder-block" style="height:240px;">
+          REGULATORY HERO VISUAL  
+          (CTD Modules / submission timeline motif)
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR APPROACH -->
+  <section class="section alt">
+    <div class="wrap grid-2">
+      <div>
+        <h2>Regulation as a continuum of science.</h2>
+        <p>We build the submission story while the science is still being generated, ensuring every number in the dossier is anchored and defensible.</p>
+      </div>
+      <div>
+        <div class="placeholder-block" style="height:200px;">
+          VENN / OVERLAP DIAGRAM  
+          SCIENCE ∩ QUALITY ∩ COMPLIANCE
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR EXPERTISE (EMA / MHRA / FDA TABS IN FINAL BUILD) -->
+  <section class="section">
+    <div class="wrap">
+      <h2>Cross-agency expertise.</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>EMA</h3>
+          <p>CP, DCP, MRP, NP. Scientific Advice. Module 1–5 authoring. Variations &amp; renewals across member states.</p>
+        </div>
+        <div class="card">
+          <h3>MHRA (UK)</h3>
+          <p>National procedure, Reliance pathway, accelerated / rolling review. Ongoing lifecycle management, PSURs, variations.</p>
+        </div>
+        <div class="card">
+          <h3>FDA (US)</h3>
+          <p>505(b)(1), 505(b)(2), ANDA. Meeting briefing books, IND/NDA assembly, ESG submission. IR / DRL / CRL responses, SPL &amp; labeling.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCUMENTATION EXCELLENCE -->
+  <section class="section alt">
+    <div class="wrap grid-2">
+      <div>
+        <h2>Every module tells a story.</h2>
+        <p>We maintain traceability from analytical tables to clinical summaries. Clear logic, consistent data, regulator confidence.</p>
+      </div>
+      <div>
+        <div class="placeholder-block" style="height:200px;">
+          STACK OF "MODULE 1 / 2 / 3 / 4 / 5"  
+          ICONS / DOCUMENT PILE
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIFECYCLE MGMT + STRATEGY -->
+  <section class="section">
+    <div class="wrap grid-2">
+      <div>
+        <h2>Compliance beyond approval.</h2>
+        <p>We manage variations, renewals, labeling updates, PSURs. Change control systems that scale across regions.</p>
+        <div class="placeholder-block" style="height:120px;">
+          POST-APPROVAL TIMELINE / ARROWS
+        </div>
+      </div>
+      <div>
+        <h2>Pathway strategy with foresight.</h2>
+        <p>505(b)(2), hybrid, national vs centralized — we model pathway, cost, and data expectations before you commit budget.</p>
+        <div class="placeholder-block" style="height:120px;">
+          DECISION TREE GRAPHIC  
+          "IF data set A → ROUTE X"
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTEGRATION WITH R&D -->
+  <section class="section alt">
+    <div class="wrap grid-2">
+      <div>
+        <h2>From lab bench to Module 3.</h2>
+        <p>Regulatory and R&amp;D share the same spine here. The formulation rationale, stability story, and manufacturing narrative are built to be dossier-ready.</p>
+        <div class="cta-button" style="background:#777;width:max-content;">See R&amp;D Integration →</div>
+      </div>
+      <div>
+        <div class="placeholder-block" style="height:200px;">
+          LAB TEAM / HANDOVER VISUAL  
+          (R&amp;D ↔ Regulatory)
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY + CONTACT CTA -->
+  <section class="section">
+    <div class="wrap grid-2">
+      <div>
+        <h2>Agile expertise. Global perspective.</h2>
+        <p>Direct access to senior people. Transparent scopes. No big-consultancy fog.</p>
+      </div>
+      <div class="card" style="align-self:start;">
+        <h3>Plan Your Next Submission</h3>
+        <p>Short text reaffirming trust / confidentiality. Invite MHRA / EMA / FDA discussions.</p>
+        <div class="cta-button" style="background:#777;width:max-content;">Contact Us →</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- =========================================================
+PAGE 4: ABOUT
+========================================================= -->
+<div class="page" id="about">
+  <!-- HERO -->
+  <section class="section">
+    <div class="wrap">
+      <h1>Science, Compliance, and Clarity — That’s Our DNA.</h1>
+      <p>Mission / origin story. “Founded to close the gap between smart formulation science and regulatory reality.” ~80-120 words.</p>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section class="section alt">
+    <div class="wrap">
+      <h2>Leadership &amp; Scientific Advisors</h2>
+      <div class="grid-4">
+        <div class="card" style="text-align:center;">
+          <div class="placeholder-block" style="height:160px;">
+            HEADSHOT
+          </div>
+          <h3 style="font-size:20px;line-height:1.3;margin-top:16px;">Name Here</h3>
+          <p style="font-size:14px;line-height:1.4;">Short bio (2–3 lines). Area of focus / experience / credibility marker.</p>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div class="placeholder-block" style="height:160px;">HEADSHOT</div>
+          <h3 style="font-size:20px;line-height:1.3;margin-top:16px;">Name Here</h3>
+          <p style="font-size:14px;line-height:1.4;">Short bio (2–3 lines). Area of focus / experience / credibility marker.</p>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div class="placeholder-block" style="height:160px;">HEADSHOT</div>
+          <h3 style="font-size:20px;line-height:1.3;margin-top:16px;">Name Here</h3>
+          <p style="font-size:14px;line-height:1.4;">Short bio (2–3 lines). Area of focus / experience / credibility marker.</p>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div class="placeholder-block" style="height:160px;">HEADSHOT</div>
+          <h3 style="font-size:20px;line-height:1.3;margin-top:16px;">Name Here</h3>
+          <p style="font-size:14px;line-height:1.4;">Short bio (2–3 lines). Area of focus / experience / credibility marker.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="section">
+    <div class="wrap grid-4">
+      <div class="card">
+        <h3>Integrity</h3>
+        <p>No theatre. Just honest data and clear narrative.</p>
+      </div>
+      <div class="card">
+        <h3>Precision</h3>
+        <p>Our work stands in audits and agency review.</p>
+      </div>
+      <div class="card">
+        <h3>Collaboration</h3>
+        <p>We act like part of your internal team, not an external supplier.</p>
+      </div>
+      <div class="card">
+        <h3>Agility</h3>
+        <p>Senior decision-making without corporate delay.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NETWORK / FOOTPRINT -->
+  <section class="section alt">
+    <div class="wrap grid-2">
+      <div>
+        <h2>Global Network</h2>
+        <p>CRO / CDMO partners, EU / UK / US regulatory reach, and manufacturing transfer capability. ~60-80 words.</p>
+      </div>
+      <div>
+        <div class="placeholder-block" style="height:240px;">
+          MAP / NODE GRAPH  
+          LONDON AS HUB → EU / US / ASIA
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- =========================================================
+PAGE 5: INSIGHTS
+========================================================= -->
+<div class="page" id="insights">
+  <!-- HERO -->
+  <section class="section">
+    <div class="wrap">
+      <h1>Insights</h1>
+      <p>Short intro. “Perspectives on formulation design, regulatory strategy, and lifecycle thinking.”</p>
+    </div>
+  </section>
+
+  <!-- FILTER BAR -->
+  <section class="section alt">
+    <div class="wrap" style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;">
+      <div style="font-size:16px;color:#555;">Filters: All • Formulation • Regulatory • 505(b)(2) • CMC</div>
+      <div class="placeholder-block" style="height:44px;max-width:260px;flex:1;">
+        SEARCH INPUT (future)
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE GRID -->
+  <section class="section">
+    <div class="wrap grid-3">
+      <div class="card">
+        <div class="placeholder-block" style="height:160px;">THUMBNAIL</div>
+        <div style="font-size:14px;color:#999;margin-top:12px;">Regulatory Pathways</div>
+        <h3 style="font-size:20px;line-height:1.3;margin-top:8px;">Bridging EMA and MHRA Submissions</h3>
+        <p style="font-size:14px;line-height:1.4;">Excerpt preview 2–3 lines. Talks about post-Brexit alignment strategy without duplication of effort.</p>
+        <div style="font-size:14px;color:#999;">Read →</div>
+      </div>
+      <div class="card">
+        <div class="placeholder-block" style="height:160px;">THUMBNAIL</div>
+        <div style="font-size:14px;color:#999;margin-top:12px;">CMC / Stability</div>
+        <h3 style="font-size:20px;line-height:1.3;margin-top:8px;">Designing Stability Studies for 505(b)(2)</h3>
+        <p style="font-size:14px;line-height:1.4;">Excerpt preview 2–3 lines. Focus on long-acting injectables and depo systems.</p>
+        <div style="font-size:14px;color:#999;">Read →</div>
+      </div>
+      <div class="card">
+        <div class="placeholder-block" style="height:160px;">THUMBNAIL</div>
+        <div style="font-size:14px;color:#999;margin-top:12px;">Formulation Design</div>
+        <h3 style="font-size:20px;line-height:1.3;margin-top:8px;">Why Bioinformatics Belongs in Formulation</h3>
+        <p style="font-size:14px;line-height:1.4;">Excerpt preview 2–3 lines. Predictive tools, excipient compatibility, release modeling.</p>
+        <div style="font-size:14px;color:#999;">Read →</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- =========================================================
+PAGE 6: CONTACT
+========================================================= -->
+<div class="page" id="contact">
+  <!-- HERO -->
+  <section class="section">
+    <div class="wrap grid-2">
+      <div>
+        <h1>Let’s Talk.</h1>
+        <p>“Ready to discuss your next molecule or submission? We work with companies building small-molecule assets across sterile injectables, ophthalmics, oral solids, and oral liquids — and we support submissions across EMA, MHRA, and FDA.”</p>
+        <p style="font-size:16px;line-height:1.4;color:#999;">
+          CMC Wise Ltd<br/>
+          63-66 Hatton Garden, Fifth Floor, Suite 23<br/>
+          London EC1N 8LE, United Kingdom<br/>
+          info@cmcwise.com
+        </p>
+      </div>
+      <div>
+        <div class="card">
+          <h2 style="margin-top:0;">Send a Message</h2>
+          <div class="placeholder-block" style="height:44px;margin-bottom:12px;text-align:left;">
+            NAME FIELD
+          </div>
+          <div class="placeholder-block" style="height:44px;margin-bottom:12px;text-align:left;">
+            COMPANY FIELD
+          </div>
+          <div class="placeholder-block" style="height:44px;margin-bottom:12px;text-align:left;">
+            EMAIL FIELD
+          </div>
+          <div class="placeholder-block" style="height:100px;margin-bottom:12px;text-align:left;">
+            MESSAGE TEXTAREA
+          </div>
+          <div class="placeholder-block" style="height:20px;margin-bottom:24px;text-align:left;">
+            [ ] Please send NDA first
+          </div>
+          <div class="cta-button" style="background:#222;width:100%;text-align:center;">Submit →</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTIONAL MAP / VISUAL -->
+  <section class="section alt">
+    <div class="wrap">
+      <div class="placeholder-block" style="height:240px;">
+        EMBED MAP OF LONDON OFFICE / STATIC MAP IMAGE
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- =========================================================
+GLOBAL FOOTER
+========================================================= -->
+<footer class="site-footer">
+  <div class="footer-grid">
+
+    <div>
+      <h4>CMC Wise</h4>
+      <p>Formulation R&amp;D and Regulatory Affairs for small-molecule pharmaceuticals.</p>
+      <p>UK-based. Globally connected.</p>
+    </div>
+
+    <div>
+      <h4>Navigation</h4>
+      <ul>
+        <li>Home</li>
+        <li>R&amp;D</li>
+        <li>Regulatory</li>
+        <li>About</li>
+        <li>Insights</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Contact</h4>
+      <p>CMC Wise Ltd</p>
+      <p>63-66 Hatton Garden, Fifth Floor, Suite 23</p>
+      <p>London EC1N 8LE, United Kingdom</p>
+      <p>info@cmcwise.com</p>
+    </div>
+
+    <div>
+      <h4>Legal</h4>
+      <ul>
+        <li>Privacy Notice</li>
+        <li>Terms</li>
+      </ul>
+    </div>
+
+    <div class="copyright">
+      © CMC Wise. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
